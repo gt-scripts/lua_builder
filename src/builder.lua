@@ -480,7 +480,6 @@ function handleModule(text)
 end
 
 function createFolder(name, dir) -- dir beeing nil, will create on the exacly same dir that run the entire program
-    print(name, dir)
     if dir then
         os.execute('cd ' .. dir .. ' && mkdir ' .. name)
     else
@@ -619,8 +618,6 @@ function table:dump()
     -- This is necessary for working with HUGE tables otherwise we run out of memory using concat on huge strings
     tableInsert(output, output_str)
     output_str = table.concat(output)
-
-    print(output_str)
 end
 
 function string:split(sep)
