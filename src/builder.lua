@@ -237,7 +237,7 @@ function transferFiles(manifestCommands)
                 end
             end
             transferFile('./resource/' .. dir, './dist/' .. dir)
-            if dir:endsWith('.lua') and not dir:find('@') then
+            if dir and dir:endsWith('.lua') and not dir:find('@') then
                 handleFile('./dist/' .. dir)
             end
         end
