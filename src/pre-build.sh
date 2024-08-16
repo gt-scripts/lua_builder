@@ -19,13 +19,7 @@ mkdir -p "$resourceDir"
 # Copiar fxmanifest.lua
 cp "$scriptDir/fxmanifest.lua" "$resourceDir"
 
-# Ler o arquivo de lista de diretórios ignorados do diretório atual
-ignored_directories=()
-if [ -f "ignored" ]; then
-    while IFS= read -r dir; do
-        ignored_directories+=("$dir")
-    done < "ignored"
-fi
+ignored_directories="lua_builder"
 
 # Ler o arquivo de lista de diretórios ignorados diretamente do diretório $scriptDir
 if [ -f "$scriptDir/ignored_directories.txt" ]; then
